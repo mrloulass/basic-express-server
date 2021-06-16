@@ -20,4 +20,9 @@ app.use(err404);
 app.use(err500);
 
 
-module.exports = app;
+module.exports = {
+  app: app,
+  start:(PORT)=> {
+    app.listen(PORT, () => console.log('Server is Running'))
+  },
+}
